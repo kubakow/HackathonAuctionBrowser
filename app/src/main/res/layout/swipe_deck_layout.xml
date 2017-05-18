@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<com.daprlabs.aaron.swipedeck.layouts.SwipeFrameLayout
+xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:swipedeck="http://schemas.android.com/apk/res-auto"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+android:id="@+id/swipeLayout"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+android:orientation="vertical">
+
+<com.daprlabs.aaron.swipedeck.SwipeDeck
+    android:id="@+id/swipe_deck"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="10dp"
+    swipedeck:max_visible="3"
+    swipedeck:card_spacing="5dp"
+    swipedeck:swipe_enabled="true"/>
+
+    <ImageButton
+        android:src="@drawable/shopping_basket"
+        android:id="@+id/end_swipe_image"
+        android:background="@android:color/transparent"
+        android:layout_gravity="center"
+        android:scaleType="fitCenter"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content" />
+
+</com.daprlabs.aaron.swipedeck.layouts.SwipeFrameLayout>
