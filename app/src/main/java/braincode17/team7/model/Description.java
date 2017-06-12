@@ -1,10 +1,10 @@
-package braincode17.team7;
+package braincode17.team7.model;
 
 /**
  * Created by Grzegorz on 24.03.2017.
  */
 
-class Description {
+public class Description {
 
     private String html;
     private String plainText;

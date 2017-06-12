@@ -1,4 +1,4 @@
-package braincode17.team7;
+package braincode17.team7.settings;
 
 import android.content.Intent;
 import android.support.design.widget.TextInputEditText;
@@ -19,7 +19,10 @@ import com.appyvet.rangebar.RangeBar;
 
 import java.util.HashMap;
 
+import braincode17.team7.R;
+import braincode17.team7.swipe.offer.SwipeOfferActivity;
 import braincode17.team7.listing.ListingFavoritesActivity;
+import braincode17.team7.utils.CategoriesUtils;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
@@ -49,7 +52,7 @@ public class SettingsActivity extends AppCompatActivity {
     @BindView(R.id.right_range_price)
     TextView rightRangePrice;
 
-    HashMap<String, String> categoriesMap;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -57,31 +60,12 @@ public class SettingsActivity extends AppCompatActivity {
         setContentView(R.layout.activity_settings);
         ButterKnife.bind(this);
 
-        openCategoriesButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                openCategoriesButton.setVisibility(View.GONE);
-                radioGroupCategories.setVisibility(View.VISIBLE);
-                closeCategoriesButton.setVisibility(View.VISIBLE);
-
-            }
-        });
-
-        closeCategoriesButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                closeCategoriesButton.setVisibility(View.GONE);
-                radioGroupCategories.setVisibility(View.GONE);
-                openCategoriesButton.setVisibility(View.VISIBLE);
-
-            }
-        });
 
         priceRangeBar.setOnRangeBarChangeListener(new RangeBar.OnRangeBarChangeListener() {
             @Override
             public void onRangeChangeListener(RangeBar rangeBar, int leftPinIndex, int rightPinIndex, String leftPinValue, String rightPinValue) {
                 leftRangePrice.setText(leftPinValue);
-                if (rightPinValue.equals("1000")) {
+                if ("1000".equals(rightPinValue)) {
                     rightRangePrice.setText("1000+");
                 } else {
                     rightRangePrice.setText(rightPinValue);
@@ -99,37 +83,7 @@ public class SettingsActivity extends AppCompatActivity {
                 return true;
             }
         });
-        categoriesMap = new HashMap<>();
-        categoriesMap.put("Biżuteria i Zegarki", "19732");
-        categoriesMap.put("Dom i Ogród", "5");
-        categoriesMap.put("Erotyka", "63757");
-        categoriesMap.put("Filmy", "20585");
-        categoriesMap.put("Gry", "9");
-        categoriesMap.put("Komputery", "2");
-    }
 
-    @OnClick(R.id.search_button)
-    void onSearchButtonClick() {
-        String name = searchTextInputEditText.getText().toString();
-        int selectedRadioButton = radioGroupCategories.getCheckedRadioButtonId();
-        radioButton = (RadioButton) findViewById(selectedRadioButton);
-        String categoryid;
-        if (radioButton != null && radioButton.isChecked()) {
-            categoryid = categoriesMap.get(radioButton.getText().toString());
-        } else {
-            categoryid = null;
-        }
-        String minprice = leftRangePrice.getText().toString();
-        String maxprice;
-        if (rightRangePrice.equals("1000+")) {
-            maxprice = "999999";
-        } else {
-            maxprice = rightRangePrice.getText().toString();
-        }
-        if (categoryid == null) {
-            startActivity(SwipeOfferActivity.createIntent(this, name, minprice, maxprice));
-        } else
-            startActivity(SwipeOfferActivity.createIntent(this, name, categoryid, minprice, maxprice));
     }
 
     @Override
@@ -162,6 +116,51 @@ public class SettingsActivity extends AppCompatActivity {
 
         return super.onOptionsItemSelected(item);
     }
+
+
+
+    @OnClick(R.id.ib_categories)
+    void onOpenCategoriesButtonClick(){
+                openCategoriesButton.setVisibility(View.GONE);
+                radioGroupCategories.setVisibility(View.VISIBLE);
+                closeCategoriesButton.setVisibility(View.VISIBLE);
+    }
+
+    @OnClick(R.id.ib_categories_close)
+    void onCloseCategoriesButtonClick(){
+        closeCategoriesButton.setVisibility(View.GONE);
+        radioGroupCategories.setVisibility(View.GONE);
+        openCategoriesButton.setVisibility(View.VISIBLE);
+    }
+
+    @OnClick(R.id.search_button)
+    void onSearchButtonClick() {
+        String name = searchTextInputEditText.getText().toString();
+        int selectedRadioButton = radioGroupCategories.getCheckedRadioButtonId();
+        radioButton = (RadioButton) findViewById(selectedRadioButton);
+        String categoryid;
+        if (radioButton != null && radioButton.isChecked()) {
+            categoryid = CategoriesUtils.categoriesMap.get(radioButton.getText().toString());
+        } else {
+            categoryid = null;
+        }
+        String minprice = leftRangePrice.getText().toString();
+        String maxprice;
+        if ("1000+".equals(rightRangePrice)) {
+            maxprice = "999999";
+        } else {
+            maxprice = rightRangePrice.getText().toString();
+        }
+        if (categoryid == null) {
+            startActivity(SwipeOfferActivity.createIntent(this, name, minprice, maxprice));
+        } else
+            startActivity(SwipeOfferActivity.createIntent(this, name, categoryid, minprice, maxprice));
+    }
+
+
+
+
+
 
 
 }

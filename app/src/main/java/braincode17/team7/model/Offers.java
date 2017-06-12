@@ -1,11 +1,8 @@
-package braincode17.team7;
+package braincode17.team7.model;
 
 import android.os.Parcel;
 import android.os.Parcelable;
 
-import com.google.gson.annotations.SerializedName;
-
-import java.io.Serializable;
 import java.util.List;
 
 /**
@@ -26,7 +23,7 @@ public class Offers implements Parcelable{
     private String name;
     private boolean cartAvailable;
     private Quantity quantity;
-    private Prices  prices;
+    private Prices prices;
 
     private List<Parameters> parameters;
 

@@ -1,6 +1,8 @@
-package braincode17.team7;
+package braincode17.team7.swipe.offer;
 
 import java.util.List;
+
+import braincode17.team7.model.Offers;
 
 /**
  * Created by Grzegorz on 25.03.2017.

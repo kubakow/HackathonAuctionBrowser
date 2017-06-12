@@ -7,10 +7,9 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 
-import braincode17.team7.MainActivity;
 import braincode17.team7.R;
-import braincode17.team7.SettingsActivity;
-import braincode17.team7.StaticFields;
+import braincode17.team7.settings.SettingsActivity;
+import braincode17.team7.utils.StaticFields;
 import braincode17.team7.listing.ListingFavoritesActivity;
 
 public class DetailOfferActivity extends AppCompatActivity {

@@ -1,4 +1,4 @@
-package braincode17.team7;
+package braincode17.team7.model;
 
 import android.os.Parcel;
 import android.os.Parcelable;
@@ -11,7 +11,9 @@ public class Prices implements Parcelable{
 
     private BuyNow buyNow;
 
+
     protected Prices(Parcel in) {
+        buyNow = in.readParcelable(BuyNow.class.getClassLoader());
     }
 
     public static final Creator<Prices> CREATOR = new Creator<Prices>() {
@@ -30,6 +32,7 @@ public class Prices implements Parcelable{
         return buyNow;
     }
 
+
     @Override
     public int describeContents() {
         return 0;
@@ -37,5 +40,6 @@ public class Prices implements Parcelable{
 
     @Override
     public void writeToParcel(Parcel dest, int flags) {
+        dest.writeParcelable(buyNow, flags);
     }
 }

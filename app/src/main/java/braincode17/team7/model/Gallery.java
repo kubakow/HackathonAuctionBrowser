@@ -1,4 +1,4 @@
-package braincode17.team7;
+package braincode17.team7.model;
 
 /**
  * Created by Kuba on 2017-03-25.

@@ -1,10 +1,10 @@
-package braincode17.team7;
+package braincode17.team7.model;
 
 /**
  * Created by Grzegorz on 24.03.2017.
  */
 
-class Company {
+public class Company {
 
     String firstName;
     String lastName;

@@ -10,10 +10,9 @@ import android.widget.TextView;
 import com.bumptech.glide.Glide;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 
-import braincode17.team7.Offers;
+import braincode17.team7.model.Offers;
 import braincode17.team7.R;
 
 /**

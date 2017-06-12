@@ -1,4 +1,4 @@
-package braincode17.team7;
+package braincode17.team7.swipe.offer;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -10,9 +10,10 @@ import android.widget.TextView;
 import com.bumptech.glide.Glide;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
-import java.util.Random;
+
+import braincode17.team7.model.Offers;
+import braincode17.team7.R;
 
 /**
  * Created by Grzegorz on 24.03.2017.

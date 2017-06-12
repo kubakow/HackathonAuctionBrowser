@@ -1,4 +1,4 @@
-package braincode17.team7;
+package braincode17.team7.swipe.offer;
 
 import android.content.Context;
 import android.content.Intent;
@@ -7,9 +7,6 @@ import android.os.Parcelable;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
-import android.widget.ImageButton;
-import android.widget.Toast;
 
 import com.daprlabs.aaron.swipedeck.SwipeDeck;
 
@@ -17,8 +14,12 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
+import braincode17.team7.model.Offers;
+import braincode17.team7.R;
+import braincode17.team7.utils.StaticFields;
 import braincode17.team7.listing.FavoritesListAdapter;
 import braincode17.team7.listing.ListingFavoritesActivity;
+import braincode17.team7.settings.SettingsActivity;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;

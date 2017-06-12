@@ -1,10 +1,10 @@
-package braincode17.team7;
+package braincode17.team7.model;
 
 /**
  * Created by Grzegorz on 24.03.2017.
  */
 
-class MainImage {
+public class MainImage {
 
     String small;
     String medium;

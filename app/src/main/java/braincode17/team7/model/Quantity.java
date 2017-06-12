@@ -1,10 +1,10 @@
-package braincode17.team7;
+package braincode17.team7.model;
 
 /**
  * Created by Grzegorz on 25.03.2017.
  */
 
-class Quantity {
+public class Quantity {
 
     private String unitType;
     private int value;

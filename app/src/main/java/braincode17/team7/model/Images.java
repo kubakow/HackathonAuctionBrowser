@@ -1,4 +1,4 @@
-package braincode17.team7;
+package braincode17.team7.model;
 
 import android.os.Parcel;
 import android.os.Parcelable;

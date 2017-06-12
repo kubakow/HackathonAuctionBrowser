@@ -1,7 +1,8 @@
-package braincode17.team7;
+package braincode17.team7.swipe.offer;
 
 import android.util.Log;
 
+import braincode17.team7.RetrofitService;
 import io.reactivex.Observable;
 import nucleus.presenter.Presenter;
 import retrofit2.Retrofit;

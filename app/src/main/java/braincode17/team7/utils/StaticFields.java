@@ -1,4 +1,4 @@
-package braincode17.team7;
+package braincode17.team7.utils;
 
 /**
  * Created by Kuba on 2017-03-25.
