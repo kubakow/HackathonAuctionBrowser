@@ -1,3 +1,3 @@
 # wwa-team7
 
-Przegladarka ofert :)
+Tinder-like auction browser for Allegro.
